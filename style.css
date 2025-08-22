@@ -3,6 +3,9 @@
     padding:0;
     box-sizing: border-box;
 }
+body {
+    position: relative;
+}
 .gridContainer{
     width: 60%;
     height:60vh;
@@ -10,8 +13,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows : repeat(3, auto);
-    margin-left: 20%;
-    margin-top:20vh;
+    position: absolute;
+    top: 20vh;
+    right: 20%;
 }
 .gridCell{
     border-right: solid 2px black;
@@ -22,4 +26,10 @@
 }
 #cell7 , #cell8, #cell9 {
     border-bottom: none;
+}
+.info{
+    position: absolute;
+    width: 60%;
+    right: 20%;
+    text-align: center;
 }
