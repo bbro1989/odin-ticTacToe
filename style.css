@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.gridContainer{
+    width: 60%;
+    height:60vh;
+    border: solid 2px #eee;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows : repeat(3, auto);
+    margin-left: 20%;
+    margin-top:20vh;
+}
+.gridCell{
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+}
+#cell3 , #cell6, #cell9 {
+    border-right: none;
+}
+#cell7 , #cell8, #cell9 {
+    border-bottom: none;
+}
