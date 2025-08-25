@@ -40,7 +40,7 @@ const GameController = ( () => {
     let currentPlayer = player1;
 
     const switchPlayer = () => {
-      currentPlayer = currentPlayer === player1 ? player2 : player1 ;
+      return currentPlayer = currentPlayer === player1 ? player2 : player1 ;
    };
    const checkWin = () => {
       const board = Gameboard.getBoard();
@@ -73,4 +73,22 @@ const GameController = ( () => {
       }
    }
    return {playTurn, switchPlayer, checkWin};
+})();
+const DisplayController = (() => {
+      const gridContainer = document.querySelector(".gridContainer") ;
+      const render = () => {
+         const gameBoard = Gameboard.getBoard();
+         const cells = document.querySelectorAll(".gridCell");
+         cells.forEach((cell, index) => {
+            cell.textContent = gameBoard[index];
+         });
+      }
+      gridContainer.addEventListener('click', (event) => {
+         const index = event.target.dataset.index;
+         if (index === undefined) return;
+
+         GameController.playTurn(parseInt(index));
+         render();
+
+      })
 })();
